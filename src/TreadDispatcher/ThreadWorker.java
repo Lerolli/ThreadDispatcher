@@ -15,7 +15,9 @@ public class ThreadWorker implements Runnable {
             try {
                 Thread.sleep(1000);
                 th.join();
-                ThreadDispatcher.getInstance().threadMonitor.RemoveRunningThread(threadedTask);
+                synchronized (ThreadDispatcher.getInstance().threadMonitor) {
+                    ThreadDispatcher.getInstance().threadMonitor.RemoveRunningThread(threadedTask);
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

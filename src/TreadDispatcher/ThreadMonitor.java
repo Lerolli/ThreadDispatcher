@@ -17,10 +17,10 @@ public class ThreadMonitor extends ThreadedTask {
 
     private String ArrayDequeToString(ArrayDeque<ThreadedTask> arrayList){
         var strBuilder = new StringBuilder();
-        for (var thread : arrayList){
-            strBuilder.append(thread.getName()).append("\n");
-        }
-        return strBuilder.toString();
+            for (var thread : arrayList) {
+                strBuilder.append(thread.getName()).append("\n");
+            }
+            return strBuilder.toString();
     }
 
     public void update(){

@@ -50,7 +50,9 @@ public class ThreadDispatcher {
         synchronized (ThreadDispatcher.GlobalQueue.getInstance()) {
             queue.add(task);
         }
-        threadMonitor.update();
+        synchronized (threadMonitor) {
+            threadMonitor.update();
+        }
     }
 
     public void setMaxPoolSize(int maxSize){
