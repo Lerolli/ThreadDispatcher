@@ -8,6 +8,7 @@ public abstract class ThreadedTask implements Runnable {
 
     @Override
     public void run() {
+        start();
     }
 
 }
